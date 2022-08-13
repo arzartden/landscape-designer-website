@@ -25,7 +25,7 @@ const moduleConfig = {
   devtool,
   target,
   devServer: {
-    port: 3000,
+    // port: 3000,
     open: true,
     hot: true,
     compress: true,
@@ -95,7 +95,7 @@ const moduleConfig = {
         type: 'asset/resource',
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'fonts/[name][ext]',
