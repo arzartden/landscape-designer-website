@@ -1,0 +1,128 @@
+.main-introduction {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.phone-number {
+  display: block;
+  padding: 10px 25px;
+  margin: 125px 0 50px 0;
+  color: #ffffff;
+  background-color: #708a6d;
+  border-radius: 20px;
+}
+
+.phone-number:hover {
+  background-color: #4e4e4e;
+}
+
+.main {
+  padding: 30px;
+  flex: 1 1 auto;
+  /*background-color: #3f7856;*/
+}
+
+.main__title {
+  padding: 130px 0 30px 0;
+  color: #4e4e4e;
+  font-size: 30px;
+  text-align: left;
+}
+
+.main-description {
+  text-align: left;
+  color: #4e4e4e;
+}
+
+.introduction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0 30px 0;
+}
+
+.introduction p {
+  flex: 1 1 50%;
+  margin-right: 10px;
+  padding: 25px 10px;
+  line-height: 1.5;
+  border-radius: 10px;
+  color: #7C826B;
+}
+
+.main-picture {
+  flex: 1 1 50%
+  /*max-width: 690px;*/
+  /*max-height: 500px;*/
+}
+
+.main-picture__img {
+  /*display: block;
+  max-width: 100%;
+  height: auto;
+  opacity: 0.5;*/
+  display: block;
+  /*margin-left: auto;
+  margin-right: auto;*/
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.85;  
+}
+
+.social {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background-color: #708a6d;
+}
+
+
+.social__link {
+  margin-bottom: 10px;
+}
+
+.social__link:hover {
+  opacity: 0.7;
+}
+
+.social__link:last-child {
+  margin-bottom: 0;
+}
+
+.about-me {
+  height: 300px;
+  margin: 0 0 30px 0;
+  border: 1px solid #4e4f3d;
+}
+.about-me__title {
+  font-size: 25px;
+}
+.services {
+  height: 300px;
+  margin: 0 0 30px 0;
+  border: 1px solid #4e4f3d;
+}
+.services__title {
+  font-size: 25px;
+}
+.portfolio {
+  height: 300px;
+  margin: 0 0 30px 0;
+  border: 1px solid #4e4f3d;
+}
+.portfolio__title {
+  font-size: 25px;
+}
+.contacts {
+  height: 300px;
+  border: 1px solid #4e4f3d;
+}
+.contacts__title {
+  font-size: 25px;
+}
