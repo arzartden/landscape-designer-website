@@ -4,5 +4,11 @@
   flex-direction: column;
   font-family: 'Oswald';
   font-weight: 300;
-  font-size: 24px;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0px 15px;
 }

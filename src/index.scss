@@ -1,3 +1,10 @@
+@use './components/utils/reset';
+@use './components/body/wrapper';
+@use './components/header/header';
+@use './components/main/main';
+@use './components/footer/footer';
+@use './components/mediaQ/mediaQ';
+
 @font-face {
 	font-family: 'Oswald';
 	src: url('./fonts/Oswald-Light.eot');
@@ -25,23 +32,15 @@
   font-display: swap;
 }
 
-@import './components/utils/reset';
-@import './components/body/wrapper';
-@import './components/header/header';
-@import './components/main/main';
-@import './components/footer/footer';
-@import './components/mediaQ/mediaQ';
-
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 10px;
 }
 
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 100px rgba(102, 102, 102, 0.5); 
-  border-radius: 10px;
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px rgba(31, 31, 31, 0.7);
 }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 100px rgba(102, 102, 102, 1); 
+body::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 50px rgb(112,138,109, 1);
+	box-shadow: inset 0 0 50px rgb(112,138,109, 1);
 }

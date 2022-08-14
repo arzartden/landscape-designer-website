@@ -25,11 +25,11 @@ const moduleConfig = {
   devtool,
   target,
   devServer: {
-    // port: 3000,
+    port: 3000,
     open: true,
     hot: true,
-    compress: true,
-    historyApiFallback: true,
+    // compress: true,
+    // historyApiFallback: true,
   },
   module: {
     rules: [
