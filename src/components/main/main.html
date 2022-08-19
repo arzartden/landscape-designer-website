@@ -58,26 +58,32 @@
     <div class="container">
       <div class="contact-me__content">
         <h2 class="contact-me__title">Давайте обсудим ваш проект</h2>
-        <form class="contact-me__form">
+        <form action="#" class="contact-me__form">
           <div class="form-input mb-2">
-            <label for="name" class="sr-only">Ваше имя</label>
-            <input type="text" id="name" placeholder="Ваше имя">
+            <label for="clientName" class="sr-only">Ваше имя</label>
+            <input type="text" name="name" id="clientName" class="input-name required" placeholder="Ваше имя*">
           </div>
           <div class="form-input mb-2">
-            <label for="email" class="sr-only">Ваш Email</label>
-            <input type="email" id="email" placeholder="Ваш Email">
+            <label for="clientTel" class="sr-only">Ваш номер телефона</label>
+            <input type="tel" name="tel" id="clientTel" class="input-tel required" placeholder="Ваш номер телефона*">
           </div>
           <div class="form-input mb-2">
-            <label for="message" class="sr-only">Ваше сообщение</label>
-            <textarea id="message" placeholder="Ваше сообщение"></textarea>
+            <label for="clientMessage" class="sr-only">Ваше сообщение</label>
+            <textarea id="clientMessage" name="message" class="input-message" placeholder="Ваше сообщение"></textarea>
           </div>
           <div class="small mb-1">
-            <label>
-              <input type="checkbox" name="accept" value="Accept Rule">
-              Нажимая на эту кнопку, вы соглашаетесь с политикой конфиденциальности
+            <input id="formAccept" type="checkbox" name="accept" class="input-checkbox required">
+            <label for="formAccept" class="label-checkbox">
+              Нажимая на эту кнопку, вы соглашаетесь с политикой конфиденциальности*
             </label>
           </div>
-          <button class="btn btn-green">Отправить сообщение</button>
+          <button class="btn btn-green trigger">Отправить</button>
+          <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h1>Заполните поля, отмеченные * и попробуйте еще раз</h1>
+            </div>
+          </div>
         </form>
       </div>
     </div>
