@@ -152,7 +152,7 @@
   height: 50px;
   padding: 10px 20px;
 
-  border: 3px solid #708a6d;
+  border: 2px solid #708a6d;
   border-radius: 10px;
 
   outline: 0;
@@ -164,6 +164,68 @@
   resize: none;
 }
 
+.form-input input:focus, textarea:focus, .btn:focus {
+  border: none;
+  box-shadow: 0 0 15px #398031;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.form-input {
+  .error {
+    border: 2px solid red;
+    box-shadow: 0 0 10px red;
+  }
+}
+
+.small {
+  &.error {
+    .label-checkbox::before {
+      box-shadow: 0 0 10px red;
+      border: 2px solid red;
+    }
+  }
+}
+
+.label-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  line-height: 140%;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    flex: 0 0 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    border: 2px solid #708a6d;
+    border-radius: 4px;
+
+  }
+
+  &::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 13.5px;
+    left: 4px;
+    background-color: #708a6d;
+    border-radius: 2px;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out 0s;
+  }
+}
+
+.input-checkbox {
+  display: none;
+
+  &:checked + .label-checkbox::after {
+    transform: scale(1);
+  }
+}
+
 .btn {
   padding: 15px 30px;
 
@@ -172,12 +234,33 @@
   border-radius: 10px;
 
   cursor: pointer;
+  outline: 0;
+
+  &:disabled {
+
+    opacity: 0.5;
+  }
+  &:disabled:hover {
+    background: #708a6d;
+    opacity: 0.5;
+  }
 }
 
 .btn-green {
   color: #fff;
 
   background: #708a6d;
+
+  &:hover {
+    //box-shadow: 0 0 15px #398031;
+    background: #596d56;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  &:active {
+    box-shadow: none;
+    background: #4e4e4e;
+  }
 }
 
 .mb-1 {
@@ -200,4 +283,49 @@
   white-space: nowrap;
 
   border: 0;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
