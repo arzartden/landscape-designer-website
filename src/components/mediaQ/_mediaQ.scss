@@ -1,3 +1,17 @@
+@media (max-width: 1180px) {
+  .contact-me__form {
+    max-width: 50vw;
+  }
+
+  .contact-me__img {
+    flex: 1 1 100%;
+    img {
+      width: 60%;
+      margin: 0 auto 30px;
+    }
+  }
+}
+
 @media (max-width: 767px) {
   body.lock {
     overflow: hidden; /*для выключения скролла контента при взаимодействии с "выпавшим" меню бургера*/
@@ -69,6 +83,12 @@
 
       span {
         transform: scale(0);
+      }
+    }
+
+    .contact-me__img {
+      img {
+        min-width: 300px;
       }
     }
   }
