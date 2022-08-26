@@ -6,10 +6,12 @@
 
 .main__intro {
   margin-bottom: 30px;
+  padding: 0 5px;
 }
 
 .intro-main__header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 140px 0 0 0;
 }
@@ -20,12 +22,18 @@
 }
 
 .intro-main__title {
-  font-size: 32px;
-  margin-bottom: 15px;
+  font-size: 28px;
+  margin: 0 10px 15px 0;
+  text-align: center;
 }
 
 .intro-main__description {
   text-align: center;
+  margin-bottom: 30px;
+}
+
+.intro-main__phone-number {
+  margin-bottom: 30px;
 }
 
 .phone-number {
@@ -43,23 +51,27 @@
 
 .intro-main__page {
   display: flex;
-  align-items: center;
 }
 
 .intro-main__text {
   padding: 0 10px;
-  color: #7C826B;
+  max-width: 50%;
+  //color: #7C826B;
+  font-size: 18px;
+  color: #596d56;
 }
 
 .intro-main__picture {
-  flex: 1 0 50%;
+  
 }
 
 
+
 .picture-intro-main__img {
-  display: block;
-  width: 100%;
-  opacity: 0.85; 
+  // display: block;
+  // max-width: 100%;
+  // height: 50vh;
+  // opacity: 0.85; 
 }
 
 // -------------------- SOCIAL ASIDE
@@ -83,7 +95,6 @@
   border-radius: 50px;
   background-color: #fff;
   opacity: 0.7;
-  // transition: 0.3s ease-in-out;
 
   img {
     width: 14px;
@@ -92,12 +103,7 @@
 
   &:hover {
     opacity: 1;
-    // transform: scale(1.1);
   }
-
-  // &:last-child {
-  //   margin: 0;
-  // }
 }
 
 // ----------------------------- ABOUT ME SECTION
@@ -105,6 +111,7 @@
 .about-me__content {
   height: 300px;
   margin: 0 0 30px 0;
+  padding: 0 10px;
   border: 1px solid #4e4f3d;
 }
 .about-me__title {
@@ -116,6 +123,7 @@
 .services__content {
   height: 300px;
   margin: 0 0 30px 0;
+  padding: 0 10px;
   border: 1px solid #4e4f3d;
 }
 .services__title {
@@ -127,6 +135,7 @@
 .portfolio__content {
   height: 300px;
   margin: 0 0 30px 0;
+  padding: 0 10px;
   border: 1px solid #4e4f3d;
 }
 
@@ -137,7 +146,7 @@
 // -------------------------- CONTACT-ME SECTION
 
 .contact-me__title {
-  font-size: 28px;
+  font-size: 24px;
   text-align: center;
 }
 
@@ -153,20 +162,23 @@
 
 .contact-me__img {
   flex: 1 1 50%;
-  padding-top: 30px;
+  padding-bottom: 10px;
   img {
     display: block;
     width: 100%;
-    min-width: 290px;
+    height: 100%;
+    object-position: center;
+    object-fit:contain;
+    min-width: 250px;
   }
 }
 
 .contact-me__form {
-  max-width: 30vw;
+  width: 30vw;
   min-width: 250px;
   margin: 0 auto;
   padding: 30px 15px;
-  font-size: 14px;
+  font-size: 12px;
   background: #ffffff;
 }
 
@@ -178,8 +190,8 @@
 
 .form-input input,
 .form-input textarea {
-  height: 50px;
-  padding: 10px 20px;
+  height: 40px;
+  padding: 10px 15px;
 
   border: 2px solid #708a6d;
   border-radius: 10px;
@@ -249,7 +261,7 @@
     width: 12px;
     height: 12px;
     position: absolute;
-    top: 10.5px;
+    top: 11px;
     left: 4px;
     background-color: #708a6d;
     border-radius: 2px;
@@ -269,34 +281,28 @@
 .btn {
   padding: 15px 30px;
 
+  color: #ffffff;
   font-weight: 400;
 
   border-radius: 10px;
+  background: #708a6d;
 
   cursor: pointer;
   outline: 0;
 
+  &:hover {
+    background: #596d56;
+  }
+  &:active {
+    color: #fff;
+    background: #4e4e4e;
+  }
   &:disabled {
-
     opacity: 0.5;
   }
   &:disabled:hover {
     background: #708a6d;
     opacity: 0.5;
-  }
-}
-
-.btn-green {
-  color: #fff;
-
-  background: #708a6d;
-
-  &:hover {
-    background: #596d56;
-  }
-
-  &:active {
-    background: #4e4e4e;
   }
 }
 
@@ -322,6 +328,8 @@
   border: 0;
 }
 
+// -----------------------MODAL WINDOW
+
 .modal {
   position: fixed;
   left: 0;
@@ -334,6 +342,28 @@
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
+
+.whatsapp__link {
+  color: #25D366;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.telegram__link {
+  color: #0088cc;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.tel__link {
+  color: #596d56;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 
 .modal-content {
   position: absolute;
