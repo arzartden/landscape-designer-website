@@ -1,9 +1,8 @@
 @use './components/utils/reset';
-@use './components/body/wrapper';
+@use './components/wrapper/wrapper';
 @use './components/header/header';
 @use './components/main/main';
 @use './components/footer/footer';
-@use './components/mediaQ/mediaQ';
 
 @font-face {
 	font-family: 'Oswald';
