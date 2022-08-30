@@ -1,0 +1,39 @@
+<section class="contact-me">
+  <div class="container">
+    <div class="contact-me__body">
+      <div class="contact-me__content">
+        <h2 class="contact-me__title">Получить консультацию</h2>
+        <form action="#" class="contact-me__form">
+          <div class="form-input mb-2">
+            <label for="clientName" class="sr-only">Ваше имя</label>
+            <input type="text" name="name" id="clientName" class="input-name required" placeholder="Ваше имя*">
+          </div>
+          <div class="form-input mb-2">
+            <label for="clientTel" class="sr-only">Ваш номер телефона</label>
+            <input type="tel" name="tel" id="clientTel" class="input-tel required" placeholder="Ваш номер телефона*">
+          </div>
+          <div class="form-input mb-2">
+            <label for="clientMessage" class="sr-only">Ваше сообщение</label>
+            <textarea id="clientMessage" name="message" class="input-message" placeholder="Ваше сообщение"></textarea>
+          </div>
+          <div class="small mb-1">
+            <input id="formAccept" type="checkbox" name="accept" class="input-checkbox required">
+            <label for="formAccept" class="label-checkbox">
+              <span>Нажимая на эту кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности*</a></span>
+            </label>
+          </div>
+          <button class="btn btn-green" disabled>Отправить</button>
+          <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&#10006;</span>
+                <div class="modal-text"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="contact-me__img">
+        <img src="../../../img/main/project2.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
