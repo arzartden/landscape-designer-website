@@ -11,21 +11,29 @@ const devMode = mode === 'development';
 const target = devMode ? 'web' : 'browserslist';
 const devtool = devMode ?  'source-map' : false;
 
+const pages = ['index', 'privacy'];
+
 const moduleConfig = {
   mode,
-  entry: {
-    bundle: path.resolve(__dirname, 'src/index.js'),
-  },
+  entry: pages.reduce((config, page) => {
+    config[page] = `/src/js/${page}.js`;
+    return config;
+  }, {}),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
     clean: true,
     assetModuleFilename: 'assets/[name][ext]',
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   devtool,
   target,
   devServer: {
-    port: 3000,
+    port: 5000,
     open: true,
     hot: true,
     // compress: true,
@@ -104,9 +112,15 @@ const moduleConfig = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.html'),
-    }),
+    ...pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          inject: true,
+          filename: `${page}.html`,
+          template: `/src/pages/${page}.html`,
+          chunks: [page],
+        })
+    ),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
