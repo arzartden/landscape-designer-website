@@ -1,0 +1,283 @@
+@import '/src/components/utils/variables';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: $bodyBackColor;
+  }
+}
+
+.header__body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: 45px;
+  }
+
+  span {
+    display: block;
+    margin: auto;
+    color: $mainColorText;
+  }
+}
+
+.logo__title {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.logo__profession {
+  font-size: $smallFontSize;
+}
+
+.header__burger {
+  display: none;
+}
+
+.menu__list {
+  display: flex;
+  position: relative;
+  z-index: 2;
+
+  li {
+    margin: 0 30px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.menu__link {
+  position: relative;
+  color: $mainColorText;
+
+  &:hover{
+    color: $headerHoverColor;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background-color: $primaryColor;
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+// ---------------------------------------------- @MEDIA
+
+@media (max-width: 767px) {
+
+  body.lock {
+    overflow: hidden; /*для выключения скролла контента при взаимодействии с "выпавшим" меню бургера*/
+  }
+
+  .header__body {
+    height: 60px;
+  }
+
+  .header__logo {
+    img {
+      height: 38px;
+    }
+  }
+
+  .logo__namedesigner {
+    font-size: $smallFontSize;
+    text-transform: uppercase;
+  }
+
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 35px;
+    height: 25px;
+    position: relative;
+    z-index: 3;
+
+    span {
+      position: absolute;
+      background-color: $primaryColor;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      top: 11px;
+      border-radius: 10px;
+      transition: all 0.3s ease 0.3s;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      left: 0;
+      border-radius: 10px;
+      background-color: $primaryColor;
+      transition: all 0.2s ease 0.3s;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    &.active {
+      &::before {
+        transform: rotate(45deg);
+        top: 7px;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        bottom: 14px;
+      }
+
+      &::before, &::after {
+        background-color: $secondaryColor;
+      }
+
+      span {
+        transform: scale(0);
+      }
+    }
+
+  }
+
+  .header__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 75px 15px 20px 15px;
+    font-size: $middleFontSize;
+    background-color: $secondaryColor;
+    overflow: auto; /*для скрола меню при перевороте смартфона*/
+    transition: all 0.5s ease 0s;
+
+    &.active {
+      top: 0;
+      height: 295px;
+    }
+  }
+
+  .menu__list {
+    display: block;
+    text-align: center;
+
+    li{
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .menu__link {
+    color: $menuLinkBurgerColor;
+
+    &::before {
+      content: none;
+    }
+  }
+
+}
+
+@media (max-width: 479px) {
+  .header__body {
+    height: 50px;
+  }
+
+  .logo__namedesigner {
+    font-size: 13px;
+  }
+  .logo__profession {
+    font-size: 13px;
+  }
+
+  .header__logo {
+    img {
+      height: 34px;
+    }
+  }
+
+  .header__burger {
+
+    width: 30px;
+    height: 20px;
+
+    span {
+      top: 8px;
+    }
+
+    &::before,
+    &::after {
+      height: 4px;
+    }
+
+    &.active {
+      &::before {
+        top: 7px;
+      }
+
+      &::after {
+        bottom: 9px;
+      }
+
+    }
+  }
+
+  .header__menu {
+    padding: 65px 15px 20px 15px;
+    font-size: $smallFontSize;
+
+    &.active {
+      height: 250px;
+    }
+  }
+
+  .menu__list {
+    li{
+      margin: 0 0 15px 0;
+    }
+  }
+}

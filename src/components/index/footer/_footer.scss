@@ -1,0 +1,153 @@
+@import '/src/components/utils/variables';
+
+.footer__top {
+  background-color: $primaryColor;
+}
+
+.footer__main {
+  display: flex;
+  text-align: center;
+  margin: 0px -15px;  /*отступ безопасности*/
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 33.3%;
+  padding: 15px 15px;  /*отступ безопасности*/
+}
+
+
+.footer__label {
+  color: $menuLinkFooterColor;
+  margin-bottom: 15px;
+  font-size: $middleFontSize;
+}
+
+
+.menu-footer__item {
+  margin: 0 0 10px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.menu-footer__link {
+  color: $menuLinkFooterColor;
+  font-size: $middleFontSize;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: $secondaryColor;
+  }
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.social-footer__link {
+  margin: 0 0 15px 0;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: $menuLinkFooterColor;
+  opacity: 0.8;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-footer__item {
+  color: $menuLinkFooterColor;
+  font-size: $middleFontSize;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: $secondaryColor;
+  }
+}
+
+.footer__bottom {
+  padding: 10px;
+  color: $menuLinkFooterColor;
+  font-size: $smallFontSize;
+  letter-spacing: 1px;
+  background-color: $secondaryColor;
+  text-align: center;
+}
+
+.footer__bottom-body {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  opacity: 0.8;
+}
+
+.bottom-footer__policy {
+  a {
+    color: $menuLinkFooterColor;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+}
+
+// --------------------------------------------@MEDIA
+
+@media (max-width: 479px) {
+  .footer__label {
+    font-size: $smallFontSize;
+  }
+
+  .menu-footer__link {
+    font-size: $smallFontSize;
+  }
+
+  .contacts-footer__item {
+    font-size: 13px;
+  }
+
+  .social-footer__link {
+    padding: 5px;
+    
+    img {
+      width: 15px;
+      height: 15px;
+    }
+  
+  }
+
+  .footer__bottom {
+    font-size: 12px;
+  }
+
+  .footer__bottom-body {
+    gap: 20px;
+  }
+}
